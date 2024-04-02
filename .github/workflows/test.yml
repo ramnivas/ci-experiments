@@ -8,7 +8,7 @@ jobs:
         run: |
           "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
           set "PGROOT=C:\Program Files\PostgreSQL\14"
-          cd %TEMP%
+          cd %RUNNER_TEMP%
           git clone --branch v0.6.2 https://github.com/pgvector/pgvector.git
           cd pgvector
           nmake /F Makefile.win
