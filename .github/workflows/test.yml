@@ -4,16 +4,14 @@ jobs:
   my-job:
     runs-on: windows-2019
     steps:
-      # - uses: ilammy/msvc-dev-cmd@v1
+      - uses: ilammy/msvc-dev-cmd@v1
       - name: Install pgvector
         shell: cmd
         run: |
-          call "C:\Program Files\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
           set "PGROOT=C:\Program Files\PostgreSQL\14"
           cd $env:RUNNER_TEMP
           git clone --branch v0.6.2 https://github.com/pgvector/pgvector.git
           cd pgvector
-          call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
           nmake /F Makefile.win
           nmake /F Makefile.win install
 
