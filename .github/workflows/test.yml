@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: Install pgvector
         run: |
-          call "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
+          "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
           set "PGROOT=C:\Program Files\PostgreSQL\14"
           cd %TEMP%
           git clone --branch v0.6.2 https://github.com/pgvector/pgvector.git
