@@ -4,6 +4,7 @@ jobs:
   my-job:
     runs-on: windows-2019
     steps:
+      - uses: ilammy/msvc-dev-cmd@v1
       - name: Install pgvector
         run: |
           "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
